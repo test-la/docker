@@ -8,8 +8,19 @@ pipeline {
     }
 
     stage('dockerbuild') {
-      steps {
-        sh 'docker build .'
+      parallel {
+        stage('dockerbuild') {
+          steps {
+            sh 'docker build .'
+          }
+        }
+
+        stage('Nginx') {
+          steps {
+            sh 'docker run nginx'
+          }
+        }
+
       }
     }
 
