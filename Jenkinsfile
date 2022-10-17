@@ -20,6 +20,7 @@ pipeline {
 
         stage('Nginx') {
           steps {
+            sh 'docker ps -aq | xargs docker stop | xargs docker rm'
             sh 'docker run --rm -p 8081:80  -d nginx'
           }
         }
