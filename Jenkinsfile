@@ -1,15 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('docker') {
+    stage('git') {
       steps {
-        sh 'docker run hello-world'
+        sh 'wget https://github.com/test-la/docker/blob/main/Dockerfile'
       }
     }
 
-    stage('ps') {
+    stage('dockerbuild') {
       steps {
-        sh 'docker ps'
+        sh 'docker build .'
       }
     }
 
