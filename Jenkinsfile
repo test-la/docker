@@ -1,15 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('checkout') {
+    stage('docker') {
       steps {
-        git(url: 'https://github.com/test-la/docker', branch: 'main')
+        sh 'docker run hello-world'
       }
     }
 
-    stage('error') {
+    stage('ps') {
       steps {
-        sh 'ls -la'
+        sh 'docker ps'
       }
     }
 
