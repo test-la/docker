@@ -1,2 +1,2 @@
-FROM ALPINE
+FROM alpine
 RUN echo "Hello"
