@@ -20,6 +20,7 @@ pipeline {
 
         stage('Nginx') {
           steps {
+            sh 'docker kill nginx'
             sh 'docker run --name nginx --rm -p 8081:80  -d nginx'
           }
         }
