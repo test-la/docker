@@ -21,7 +21,7 @@ pipeline {
         stage('Nginx') {
           steps {
             sh 'docker run --name nginx --rm -p 8081:80  -d nginx'
-            sh 'echo -e "<html>\\n    <head>\\n        <title>Example</title>\\n    </head>\\n    <body>\\n        <p>HOLAAAA</p>\\n    </body>\\n</html>" > index.html'
+            sh 'echo -e "<html>\\n    <head>\\n        <title>Example</title>\\n    </head>\\n    <body>\\n        <p>HOLAAAA</p>\\n    </body>\\n</html>" > /usr/share/nginx/html/index.html'
           }
         }
 
