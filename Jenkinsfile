@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('git') {
       steps {
-        sh 'wget https://github.com/test-la/docker/blob/main/Dockerfile'
+        git(url: 'https://github.com/test-la/docker', branch: 'main')
       }
     }
 
