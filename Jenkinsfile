@@ -2,8 +2,11 @@ pipeline {
   agent any
   stages {
     stage('git') {
+      environment {
+        TOKEN = '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'
+      }
       steps {
-        git(url: 'https://github.com/test-la/docker', branch: 'main')
+        sh 'curl -s https://$TOKEN@raw.githubusercontent.com/test-la/docker/main/Dockerfile'
       }
     }
 
