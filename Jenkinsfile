@@ -4,14 +4,14 @@ pipeline {
             pollSCM '*/1 * * * *'
     }
     stages {
-        stage('Build') {
+        stage('dockerbuild') {
             steps {
-                echo 'Prueba de build después de agregar el pollSCM..'
+                sh 'docker build -t hello .'
             }
         }
-        stage('Test') {
+        stage('Execution') {
             steps {
-                echo 'Testing..'
+                sh 'docker run hello'
             }
         }
         stage('Deploy') {
