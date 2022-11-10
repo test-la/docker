@@ -6,12 +6,12 @@ pipeline {
     stages {
         stage('dockerbuild') {
             steps {
-                sh 'docker build -t hello .'
+                sh 'sudo docker build -t hello .'
             }
         }
         stage('Execution') {
             steps {
-                sh 'docker run hello'
+                sh 'sudo docker run hello'
             }
         }
         stage('Deploy') {
