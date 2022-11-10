@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Prueba de build después de agregar el pollSCM..'
             }
         }
         stage('Test') {
