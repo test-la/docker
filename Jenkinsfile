@@ -4,7 +4,7 @@ pipeline {
         stage('dockerbuild') {
             steps {
                 script{
-                    docker.build("https://github.com/test-la/docker/Dockerfile")
+                    sh 'docker build .'
                 }
             }
         }
