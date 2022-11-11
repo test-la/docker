@@ -2,14 +2,7 @@ pipeline {
     agent any
     stages {
         stage('dockerbuild') {
-            steps {
-                sh 'docker build -t hello .'
-            }
-        }
-        stage('Execution') {
-            steps {
-                sh 'docker run hello'
-            }
+            docker.build("https://github.com/test-la/docker/Dockerfile")
         }
         stage('Deploy') {
             steps {
