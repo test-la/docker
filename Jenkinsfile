@@ -4,7 +4,7 @@ pipeline {
         stage('dockerbuild') {
             steps {
                 script{
-                    sh 'docker build . -t test'
+                    sh 'docker build -t test .'
                     sh 'docker export --output="test.tar" test'
                 }
             }
